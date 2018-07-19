@@ -1,0 +1,3 @@
+The Player c# Script is the script controlling the bullets, there are comments in there stating what I have tried to do.
+
+The Arrow faces the mouse
