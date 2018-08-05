@@ -20,11 +20,10 @@ public class PlayerShoot : MonoBehaviour {
 				if (coolDown <=0){
 					float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
 					GameObject bullet = GameObject.Instantiate (Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
-
 					bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range(-Weapon.spread,Weapon.spread) - 90);
 					bullet.GetComponent<Projectile> ().SetWeapon(Weapon);
 					Destroy (bullet, Weapon.duration);
-					coolDown = Weapon.firerate;
+					coolDown = Weapon.firerate/1000;
 				}
 			}
 		}
@@ -39,13 +38,13 @@ public class PlayerShoot : MonoBehaviour {
 					bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range(-Weapon.spread,Weapon.spread) - 90);
 					bullet.GetComponent<Projectile> ().SetWeapon(Weapon);
 					Destroy (bullet, Weapon.duration);
-					coolDown = Weapon.firerate;
+					coolDown = Weapon.firerate/1000;
 				}
 			}
 		}
 				
 		if (coolDown >= 0) {
-			coolDown--;
+			coolDown-= 1* Time.deltaTime;
 		}
 	}
 

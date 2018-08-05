@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706903646690744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.012000002, z: -1}
+  m_LocalPosition: {x: 0, y: -0.012000002, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,10 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1070018736208562, guid: 06fea03d9f4aaf44aa3726b42f3f1f5d, type: 2}
+  name: Pistol
   spread: 0
-  firerate: 1
+  firerate: 250
   damage: 5
-  speed: 3
+  speed: 8
   duration: 5
   auto: 0
 --- !u!114 &114959693274113498
