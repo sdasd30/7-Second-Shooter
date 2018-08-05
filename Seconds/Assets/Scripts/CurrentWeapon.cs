@@ -9,6 +9,8 @@ public class CurrentWeapon : MonoBehaviour {
 	public float firerate;
 	public float damage;
 	public float speed;
+	public float duration;
+	public bool auto;
 
 	public void debugout(){
 		Debug.Log ("GO:" + bullet);

@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour {
 
 	public void SetWeapon(CurrentWeapon sent){
 		firedFrom = sent;
-		firedFrom.debugout();
 	}
 
 	// Update is called once per frame
@@ -29,7 +28,7 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "obstacle") {
+		if (other.gameObject.tag == "Obstacle") {
 			Destroy (this.gameObject);
 		}
 		if (other.gameObject.GetComponent<Attackable> () != null) {
