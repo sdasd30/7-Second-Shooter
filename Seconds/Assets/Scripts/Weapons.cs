@@ -7,7 +7,7 @@ public class Weapons : MonoBehaviour {
 	public float weaponSwitchDelay;
 	public GameObject nextWeapon;
 	public GameObject currWeapon;
-	float cooldown;
+	public float cooldown;
 
 	void Start(){
 		cooldown = weaponSwitchDelay;
