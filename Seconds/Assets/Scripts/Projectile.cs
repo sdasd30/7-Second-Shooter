@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour {
 	public bool isAllied;
 	public bool anarchy;
 	private bool speed;
+	public bool collides = true;
+	public bool piercing = false;
 
 	public void SetAngle (float rotation) {
 		m_body.transform.rotation = Quaternion.Euler (new Vector3(0f,0f,rotation));
@@ -22,26 +24,33 @@ public class Projectile : MonoBehaviour {
 		firedFrom = sent;
 	}
 
+	public float getDamage(){
+		return firedFrom.damage;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		m_body.transform.Translate (new Vector2(0f,firedFrom.speed * Time.deltaTime)); //new Vector2 (Mathf.Cos(angle) * speed * Time.deltaTime,Mathf.Sin(angle) * speed * Time.deltaTime));
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Obstacle") {
+		if (other.gameObject.tag == "Obstacle" && collides) {
 			Destroy (this.gameObject);
 		}
 		if (other.gameObject.GetComponent<Attackable> () != null) {
 			Attackable a = other.gameObject.GetComponent<Attackable> ();
 			if (a.anarchy) {
 				a.TakeDamage (firedFrom.damage);
-				Destroy (this.gameObject);
+				if (!piercing)
+					Destroy (this.gameObject);
 			} else if (isAllied && !a.allied) {
 				a.TakeDamage (firedFrom.damage);
-				Destroy (this.gameObject);
+				if (!piercing)
+					Destroy (this.gameObject);
 			} else if (!isAllied && a.allied) {
 				a.TakeDamage (firedFrom.damage);
-				Destroy (this.gameObject);
+				if (!piercing)
+					Destroy (this.gameObject);
 			}
 		}
 	}

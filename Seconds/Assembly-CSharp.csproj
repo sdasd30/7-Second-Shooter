@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\CurrentWeapon.cs" />
      <Compile Include="Assets\Scripts\FaceMouse.cs" />
      <Compile Include="Assets\Scripts\JumpThru.cs" />
+     <Compile Include="Assets\Scripts\Per Weapon Scripts\Weapons\Laser.cs" />
      <Compile Include="Assets\Scripts\PhysicsSS.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerShoot.cs" />

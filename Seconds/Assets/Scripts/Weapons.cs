@@ -31,7 +31,6 @@ public class Weapons : MonoBehaviour {
 			currWeapon.transform.localRotation = Quaternion.Euler (new Vector3(0f,0f,0f));
 			nextWeapon = null;
 			cooldown = weaponSwitchDelay;
-			Debug.Log (currWeapon.transform.localRotation.eulerAngles);
 		}
 
 	}

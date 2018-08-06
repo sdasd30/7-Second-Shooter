@@ -167,9 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
+  - {fileID: 1110707853899558, guid: 6079a2e9c3132e84e94237a32a89bd81, type: 2}
   - {fileID: 1168905266946816, guid: 47507590b3cf83244903c4341fcaaeee, type: 2}
   - {fileID: 1706903646690744, guid: d433b01548fec8c49a743d7e6cc763df, type: 2}
   - {fileID: 1464027217015304, guid: e1545a38d76628046ab718c7d521cf31, type: 2}
+  - {fileID: 1543283755376536, guid: a84c695a1ac9ef84b891afe265ce4b71, type: 2}
   weaponSwitchDelay: 7
   nextWeapon: {fileID: 0}
   currWeapon: {fileID: 0}
