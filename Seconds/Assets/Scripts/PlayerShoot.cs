@@ -18,27 +18,14 @@ public class PlayerShoot : MonoBehaviour {
 		if (Weapon.auto) {
 			if (Input.GetButton ("Fire1")) {
 				if (coolDown <=0){
-					float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-					GameObject bullet = GameObject.Instantiate (Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
-					bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range(-Weapon.spread,Weapon.spread) - 90);
-					bullet.GetComponent<Projectile> ().SetWeapon(Weapon);
-					Destroy (bullet, Weapon.duration);
-					coolDown = Weapon.firerate/1000;
+						fire ();
 				}
 			}
 		}
 		else{
 			if (Input.GetButtonDown("Fire1")){
 				if (coolDown <=0){
-					float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-					GameObject bullet = GameObject.Instantiate 
-						(Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), 
-							Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
-
-					bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range(-Weapon.spread,Weapon.spread) - 90);
-					bullet.GetComponent<Projectile> ().SetWeapon(Weapon);
-					Destroy (bullet, Weapon.duration);
-					coolDown = Weapon.firerate/1000;
+					fire ();
 				}
 			}
 		}
@@ -51,5 +38,16 @@ public class PlayerShoot : MonoBehaviour {
 
 	public float ReturnCoolDown(){
 		return coolDown;
+	}
+
+	public void fire(){
+		for (int i = 0; i < Weapon.shots; i++) {
+			float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+			GameObject bullet = GameObject.Instantiate (Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
+			bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range (-Weapon.spread, Weapon.spread) - 90);
+			bullet.GetComponent<Projectile> ().SetWeapon (Weapon);
+			Destroy (bullet, Weapon.duration);
+			coolDown = Weapon.firerate / 1000;
+		}
 	}
 }

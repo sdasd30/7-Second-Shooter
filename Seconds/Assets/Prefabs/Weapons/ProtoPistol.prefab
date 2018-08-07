@@ -70,9 +70,10 @@ MonoBehaviour:
   name: Pistol
   spread: 0
   firerate: 250
-  damage: 5
+  damage: 15
   speed: 8
   duration: 5
+  shots: 1
   auto: 0
 --- !u!114 &114959693274113498
 MonoBehaviour:

@@ -61,6 +61,7 @@ MonoBehaviour:
   damage: 2
   speed: 20
   duration: 10
+  shots: 1
   auto: 1
 --- !u!114 &114444637038804668
 MonoBehaviour:

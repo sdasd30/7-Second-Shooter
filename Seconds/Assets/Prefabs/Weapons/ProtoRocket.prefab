@@ -70,9 +70,10 @@ MonoBehaviour:
   name: Rocket
   spread: 2
   firerate: 1000
-  damage: 5
+  damage: 60
   speed: 25
   duration: 8
+  shots: 1
   auto: 0
 --- !u!114 &114672964441068476
 MonoBehaviour:

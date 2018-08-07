@@ -58,9 +58,10 @@ MonoBehaviour:
   name: Rifle
   spread: 2
   firerate: 100
-  damage: 5
+  damage: 10
   speed: 20
   duration: 5
+  shots: 1
   auto: 1
 --- !u!114 &114547957382987364
 MonoBehaviour:

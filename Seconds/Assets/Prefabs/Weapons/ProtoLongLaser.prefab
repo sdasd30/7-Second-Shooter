@@ -55,12 +55,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1765168630340348, guid: e3802b12b9002fd4ab2ce46d5f175aa4, type: 2}
-  name: Rocket
+  name: Long Laser Gun
   spread: 0
   firerate: 0
   damage: 1
-  speed: 99999
-  duration: 0.2
+  speed: 999999
+  duration: 0.02
+  shots: 1
   auto: 1
 --- !u!114 &114178668110689732
 MonoBehaviour:

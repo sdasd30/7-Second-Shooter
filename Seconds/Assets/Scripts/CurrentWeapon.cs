@@ -11,6 +11,7 @@ public class CurrentWeapon : MonoBehaviour {
 	public float damage;
 	public float speed; //Projectile Speed.
 	public float duration; //How long the bullet lasts in seconds.
+	public int shots; //How many shots does the gun shoot at once?
 	public bool auto; //Is full auto?
 
 }

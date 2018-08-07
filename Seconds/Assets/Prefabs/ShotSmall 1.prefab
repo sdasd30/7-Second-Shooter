@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAllied: 1
   anarchy: 0
+  collides: 1
+  piercing: 0
 --- !u!212 &212876173144525312
 SpriteRenderer:
   m_ObjectHideFlags: 1

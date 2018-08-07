@@ -50,7 +50,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070018736208562}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAllied: 1
   anarchy: 0
+  collides: 1
+  piercing: 0
 --- !u!212 &212116778811621524
 SpriteRenderer:
   m_ObjectHideFlags: 1

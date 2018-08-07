@@ -1,10 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\TimeRemaining.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Attackable.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\TimeRemaining.cs" Line="19" Column="18" />
-      <File FileName="Assets\Scripts\UI\NextWeaponUI.cs" Line="18" Column="35" />
-      <File FileName="Assets\Scripts\Weapons.cs" Line="10" Column="9" />
+      <File FileName="Assets\Scripts\UI\TimeRemaining.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\NextWeaponUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CurrentWeapon.cs" Line="8" Column="20" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Per Weapon Scripts\Weapons\Laser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Attackable.cs" Line="61" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
