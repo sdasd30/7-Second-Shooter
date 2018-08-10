@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AutoMirror : MonoBehaviour {
 	SpriteRenderer gun;
+	public bool flipped;
 	void Start(){
 		gun = GetComponent<SpriteRenderer> ();
 	}
@@ -11,10 +12,10 @@ public class AutoMirror : MonoBehaviour {
 	void Update () {
 		if (transform.parent.rotation.z < -.707 || transform.parent.rotation.z> .707){
 			gun.flipY = true;
+			flipped = true;
 		}
 		else
 			gun.flipY = false;
-		
-			
+			flipped = false;
 	}
 }

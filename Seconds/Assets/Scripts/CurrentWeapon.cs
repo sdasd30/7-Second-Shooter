@@ -8,10 +8,12 @@ public class CurrentWeapon : MonoBehaviour {
 	public string name; //Has no effect on gameplay, is just for ID purposes.
 	public float spread; //In degrees.
 	public float firerate; //In miliseconds.
-	public float damage;
-	public float speed; //Projectile Speed.
-	public float duration; //How long the bullet lasts in seconds.
-	public int shots; //How many shots does the gun shoot at once?
-	public bool auto; //Is full auto?
+	public float damage = 1;
+	public float speed = 10; //Projectile Speed.
+	public float duration = 5; //How long the bullet lasts in seconds.
+	public int shots = 1; //How many shots does the gun shoot at once?
+	//public int burstShots = 1;
+	//public float burstDelay = 0;
+	public bool auto = false; //Is full auto?
 
 }

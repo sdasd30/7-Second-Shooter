@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour {
 	//public GameObject BulletPrefab;
 	CurrentWeapon Weapon;
 	public Vector2 Offset;
+	bool firing;
 	float coolDown = 0;
 	// Use this for initialization
 	void Start () {
@@ -15,29 +16,31 @@ public class PlayerShoot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Weapon.auto) {
-			if (Input.GetButton ("Fire1")) {
-				if (coolDown <=0){
-						fire ();
+		if (!firing) {
+			if (Weapon.auto) {
+				if (Input.GetButton ("Fire1")) {
+					if (coolDown <= 0) {
+						//for (int c = 0; c < Weapon.burstShots; c++) {
+							fire ();
+							//StartCoroutine(WaitSeconds());
+						//}
+					}
+				}
+			} else {
+				if (Input.GetButtonDown ("Fire1")) {
+					if (coolDown <= 0) {
+						//for (int c = 0; c < Weapon.burstShots; c++) {
+							fire ();
+						//StartCoroutine(WaitSeconds());
+						//}
+					}
 				}
 			}
-		}
-		else{
-			if (Input.GetButtonDown("Fire1")){
-				if (coolDown <=0){
-					fire ();
-				}
-			}
-		}
 				
-		if (coolDown >= 0) {
-			coolDown-= 1* Time.deltaTime;
+			if (coolDown >= 0) {
+				coolDown -= 1 * Time.deltaTime;
+			}
 		}
-	}
-
-
-	public float ReturnCoolDown(){
-		return coolDown;
 	}
 
 	public void fire(){
@@ -47,7 +50,14 @@ public class PlayerShoot : MonoBehaviour {
 			bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range (-Weapon.spread, Weapon.spread) - 90);
 			bullet.GetComponent<Projectile> ().SetWeapon (Weapon);
 			Destroy (bullet, Weapon.duration);
-			coolDown = Weapon.firerate / 1000;
+			}
+		coolDown = Weapon.firerate / 1000;
 		}
+
+
+
+
+	IEnumerator WaitSeconds(){
+		yield return new WaitForSeconds(0);
 	}
 }

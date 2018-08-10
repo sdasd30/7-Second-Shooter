@@ -16,5 +16,7 @@ public class CurrentWeaponUI : MonoBehaviour {
 		theWeapon = WeaponHandler.GetComponent<Weapons> ().currWeapon;
 		weaponSprite = theWeapon.GetComponent<SpriteRenderer> ().sprite;
 		GetComponent<Image> ().sprite = weaponSprite;
+		Rect sprite = weaponSprite.rect;
+		GetComponent<RectTransform> ().localScale = new Vector3(1,sprite.height/sprite.width,0);
 	}
 }
