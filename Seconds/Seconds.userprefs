@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CurrentWeapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraFollow.cs">
     <Files>
       <File FileName="Assets\Scripts\UI\TimeRemaining.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Per Weapon Scripts\Weapons\Laser.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CurrentWeapon.cs" Line="15" Column="4" />
-      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="61" Column="36" />
-      <File FileName="Assets\Scripts\Attackable.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\CurrentWeaponUI.cs" Line="20" Column="87" />
-      <File FileName="Assets\Scripts\UI\NextWeaponUI.cs" Line="20" Column="74" />
+      <File FileName="Assets\Scripts\PlayerShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\CurrentWeaponUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\NextWeaponUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AutoMirror.cs" Line="19" Column="20" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="24" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

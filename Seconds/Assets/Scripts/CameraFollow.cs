@@ -21,6 +21,7 @@ public class CameraFollow : MonoBehaviour {
 	float lookAheadDirX;
 	float smoothLookVelocityX;
 	float smoothVelocityY;
+	const float DISTANCE_SNAP = 999f;
 
 	bool lookAheadStopped;
 
@@ -36,22 +37,31 @@ public class CameraFollow : MonoBehaviour {
 	}
 	void Update() {
 		if (target != null) {
-			focusArea.Update (target.GetComponent<Collider2D> ().bounds,minVertex,maxVertex,UseCameraLimits);
+			focusArea.Update (target.GetComponent<Collider2D> ().bounds, minVertex, maxVertex, UseCameraLimits);
+			if (Vector3.Distance (target.transform.position, transform.position) > DISTANCE_SNAP) {
+				transform.position = target.transform.position;
+			}
+		} else {
+			//GameObject pl = GameManager.Instance.CurrentPlayer;
+			//if (pl == null)
+			//	return;
+			//target = pl.GetComponent<PhysicsSS> ();
 		}
 		Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset;
 
+
 		if (focusArea.velocity.x != 0) {
 			lookAheadDirX = Mathf.Sign (focusArea.velocity.x);
-			if (Mathf.Sign(target.SelfInput.x) == Mathf.Sign(focusArea.velocity.x) && target.SelfInput.x != 0) {
-				lookAheadStopped = false;
-				targetLookAheadX = lookAheadDirX * lookAheadDstX;
-			}
-			else {
-				if (!lookAheadStopped) {
-					lookAheadStopped = true;
-					targetLookAheadX = currentLookAheadX + (lookAheadDirX * lookAheadDstX - currentLookAheadX)/4f;
-				}
-			}
+			//if (Mathf.Sign(target.InputedMove.x) == Mathf.Sign(focusArea.velocity.x) && target.InputedMove.x != 0) {
+			//	lookAheadStopped = false;
+			//	targetLookAheadX = lookAheadDirX * lookAheadDstX;
+			//}
+			//else {
+			//	if (!lookAheadStopped) {
+			//		lookAheadStopped = true;
+			//		targetLookAheadX = currentLookAheadX + (lookAheadDirX * lookAheadDstX - currentLookAheadX)/4f;
+			//	}
+			//}
 		}
 
 		currentLookAheadX = Mathf.SmoothDamp (currentLookAheadX, targetLookAheadX, ref smoothLookVelocityX, lookSmoothTimeX);
@@ -59,13 +69,14 @@ public class CameraFollow : MonoBehaviour {
 		focusPosition.y = Mathf.SmoothDamp (transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
 		focusPosition += Vector2.right * currentLookAheadX;
 		transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+		//transform.position = new Vector3 ((int)transform.position.x, (int)transform.position.y, (int)transform.position.z);
 	}
 
 	void OnDrawGizmos() {
-		/*Gizmos.color = new Color (0, 0, 1, .1f);
+		Gizmos.color = new Color (0, 0, 1, .1f);
 		Gizmos.DrawCube (focusArea.centre, focusAreaSize);
 		Gizmos.color = new Color (0, 1, 0, .4f);
-		Gizmos.DrawCube (focusArea.centre, viewSize);*/
+		Gizmos.DrawCube (focusArea.centre, viewSize);
 	}
 
 	struct FocusArea {
@@ -73,13 +84,11 @@ public class CameraFollow : MonoBehaviour {
 		public Vector2 velocity;
 		float left,right;
 		float top,bottom;
-		Vector2 focusSize;
 
 		Vector2 camSize;
 
 
 		public FocusArea(Bounds targetBounds, Vector2 size,Vector2 largeCam,Vector2 minVertex, Vector2 maxVertex) {
-			focusSize = size;
 			Vector2 realCenter = new Vector2(targetBounds.center.x,targetBounds.center.y);
 			//Debug.Log("Min: " + (realCenter.y - largeCam.y/2f) + " Max vertex: " + minVertex.y);
 			if (realCenter.x - largeCam.x/2 < minVertex.x + size.x/2f) {
